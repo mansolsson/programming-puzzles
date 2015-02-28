@@ -1,2 +1,2 @@
 # project-euler
-Saving solutions to project euler problems
+Solving project euler problems in python
