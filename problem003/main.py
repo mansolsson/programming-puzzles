@@ -8,7 +8,7 @@ def findAllPrimeFactors(number):
     remainder = number
     while remainder > 1:
         primeFactor = findNextPrimeFactor(remainder)
-        remainder = remainder / primeFactor
+        remainder //= primeFactor
         factors.append(primeFactor)
     return factors
 
@@ -17,7 +17,7 @@ def findNextPrimeFactor(number):
     limit = math.ceil(math.sqrt(number))
     for prime in primes:
         if prime > limit:
-            return int(number)
+            return number
         elif number % prime == 0:
             return prime
 
@@ -26,13 +26,13 @@ def findNextPrimeFactor(number):
         prime = findNextPrime()
         primes.append(prime)
         if prime > limit:
-            return int(number)
+            return number
         elif number % prime == 0:
             return prime
 
 
 def findNextPrime():
-    number = primes[len(primes) - 1]
+    number = primes[-1]
     if number % 2 == 0:
         number += 1
     else:

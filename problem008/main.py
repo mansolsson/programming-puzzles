@@ -16,8 +16,9 @@ def calcProductOfDigits(digits):
 if __name__ == "__main__":
     greaterProduct = 0
     digits = readDigits()
-    for i in range(0, len(digits) - 13):
-        product = calcProductOfDigits(digits[i:i + 13])
+    nrOfAdjecentDigits = 13
+    for i in range(0, len(digits) - nrOfAdjecentDigits):
+        product = calcProductOfDigits(digits[i:i + nrOfAdjecentDigits])
         if greaterProduct < product:
             greaterProduct = product
     print(greaterProduct)

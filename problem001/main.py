@@ -1,8 +1,8 @@
 if __name__ == "__main__":
-    sum = 0
-    for i in range(3, 1000, 3):
-        sum += i
-    for i in range(5, 1000, 5):
-        if i % 3 != 0:
-            sum += i
-    print(sum)
+    sumOfMultiples = 0
+    for multiple in range(3, 1000, 3):
+        sumOfMultiples += multiple
+    for multiple in range(5, 1000, 5):
+        if multiple % 3 != 0:
+            sumOfMultiples += multiple
+    print(sumOfMultiples)

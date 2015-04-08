@@ -1,7 +1,7 @@
 import math
 
 
-def findAnswer():
+def findPythagoreanTriplet():
     for a in range(1, 333):
         for b in range(a + 1, math.floor((1000 - a) / 2)):
             c = 1000 - a - b
@@ -10,4 +10,4 @@ def findAnswer():
     return 0
 
 if __name__ == "__main__":
-    print(findAnswer())
+    print(findPythagoreanTriplet())
