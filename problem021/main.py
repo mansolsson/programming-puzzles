@@ -26,6 +26,7 @@ if __name__ == "__main__":
 
     sumOfAmicableNrs = 0
     for i in range(2, 10001):
-        if sumOfDivisors[i] < 10000 and sumOfDivisors[sumOfDivisors[i]] == i and sumOfDivisors[i] != i:
+        if sumOfDivisors[i] < 10000 and sumOfDivisors[sumOfDivisors[i]] == i \
+           and sumOfDivisors[i] != i:
             sumOfAmicableNrs += sumOfDivisors[i]
     print(sumOfAmicableNrs)

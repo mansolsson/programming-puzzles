@@ -1,5 +1,6 @@
 import string
 
+
 def getNames():
     names = ""
     with open("p022_names.txt", "r") as f:
