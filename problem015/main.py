@@ -1,7 +1,10 @@
 import math
 
+
+def get_lattice_paths(height, width):
+    return math.factorial(height + width) // \
+           (math.factorial((height + width) - height) * math.factorial(height))
+
 if __name__ == '__main__':
-    a, b = 20, 20
-    result = math.factorial(a + b) // \
-        (math.factorial((a + b) - a) * math.factorial(a))
-    print(result)
+    answer = get_lattice_paths(20, 20)
+    print(answer)

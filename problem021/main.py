@@ -1,32 +1,20 @@
-def getSumOfDivisors(number):
-    divisors = []
-    if number % 2 == 0:
-        inc = 1
-    else:
-        inc = 2
+import sys
+sys.path.insert(0, "../")
+import pemath
 
-    stop = number // 2
-    i = 1
-    while i < stop:
-        if number % i == 0:
-            stop = number // i
-            if stop == i:
-                divisors.append(stop)
-            else:
-                divisors.append(stop)
-                divisors.append(i)
-        i += inc
 
-    return sum(divisors) - number
+def get_sum_of_amicable_number(limit):
+    sum_of_divisors = [0, 0]
+    for i in range(2, limit + 1):
+        sum_of_divisors.append(sum(pemath.get_divisors(i)) - i)
+
+    sum_of_amicable_nrs = 0
+    for i in range(2, limit + 1):
+        if sum_of_divisors[i] < limit and sum_of_divisors[sum_of_divisors[i]] == i \
+                and sum_of_divisors[i] != i:
+            sum_of_amicable_nrs += sum_of_divisors[i]
+    return sum_of_amicable_nrs
 
 if __name__ == "__main__":
-    sumOfDivisors = [0, 0]
-    for i in range(2, 10001):
-        sumOfDivisors.append(getSumOfDivisors(i))
-
-    sumOfAmicableNrs = 0
-    for i in range(2, 10001):
-        if sumOfDivisors[i] < 10000 and sumOfDivisors[sumOfDivisors[i]] == i \
-           and sumOfDivisors[i] != i:
-            sumOfAmicableNrs += sumOfDivisors[i]
-    print(sumOfAmicableNrs)
+    answer = get_sum_of_amicable_number(10000)
+    print(answer)

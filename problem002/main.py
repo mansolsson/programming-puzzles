@@ -1,8 +1,12 @@
+def get_sum_of_even_fibonacci(limit):
+    fibonacci1, fibonacci2 = 1, 2
+    sum_of_even_fibonacci = 0
+    while fibonacci2 < limit:
+        if fibonacci2 % 2 == 0:
+            sum_of_even_fibonacci += fibonacci2
+        fibonacci1, fibonacci2 = fibonacci2, fibonacci1 + fibonacci2
+    return sum_of_even_fibonacci
+
 if __name__ == "__main__":
-    fib1, fib2 = 1, 2
-    sumOfEvenFib = 0
-    while fib2 < 4000000:
-        if fib2 % 2 == 0:
-            sumOfEvenFib += fib2
-        fib1, fib2 = fib2, fib1 + fib2
-    print(sumOfEvenFib)
+    answer = get_sum_of_even_fibonacci(4000000)
+    print(answer)

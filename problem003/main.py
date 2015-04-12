@@ -1,59 +1,12 @@
-import math
-
-primes = [2]
-
-
-def findAllPrimeFactors(number):
-    factors = []
-    remainder = number
-    while remainder > 1:
-        primeFactor = findNextPrimeFactor(remainder)
-        remainder //= primeFactor
-        factors.append(primeFactor)
-    return factors
+import sys
+sys.path.insert(0, '../')
+import pemath
 
 
-def findNextPrimeFactor(number):
-    limit = math.ceil(math.sqrt(number))
-    for prime in primes:
-        if prime > limit:
-            return number
-        elif number % prime == 0:
-            return prime
-
-    primeFactorFound = False
-    while not primeFactorFound:
-        prime = findNextPrime()
-        primes.append(prime)
-        if prime > limit:
-            return number
-        elif number % prime == 0:
-            return prime
-
-
-def findNextPrime():
-    number = primes[-1]
-    if number % 2 == 0:
-        number += 1
-    else:
-        number += 2
-
-    primeFound = isNewPrime(number)
-    while not primeFound:
-        number += 2
-        primeFound = isNewPrime(number)
-
-    return number
-
-
-def isNewPrime(number):
-    limit = math.ceil(math.sqrt(number))
-    for prime in primes:
-        if prime > limit:
-            return True
-        elif number % prime == 0:
-            return False
-    return True
+def get_largest_prime_factor(number):
+    prime_factors = pemath.get_prime_factors(number)
+    return max(prime_factors)
 
 if __name__ == "__main__":
-    print(max(findAllPrimeFactors(600851475143)))
+    answer = get_largest_prime_factor(600851475143)
+    print(answer)

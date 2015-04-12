@@ -1,4 +1,9 @@
-def readNumbers():
+def get_first_digits_from_sum():
+    sum_of_numbers = sum(read_numbers_from_file())
+    return str(sum_of_numbers)[:10]
+
+
+def read_numbers_from_file():
     numbers = []
     with open("numbers.txt", "r") as f:
         for line in f:
@@ -6,5 +11,5 @@ def readNumbers():
     return numbers
 
 if __name__ == "__main__":
-    total = sum(readNumbers())
-    print(str(total)[:10])
+    answer = get_first_digits_from_sum()
+    print(answer)
