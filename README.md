@@ -1,4 +1,3 @@
-# Project Euler solutions
-Project Euler solutions written in Python.
+# Programming puzzles
 
-Each solution has its own main.py file and common functions are located in pemath.py.
+Solutions to various programming puzzles.
